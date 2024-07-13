@@ -8,8 +8,9 @@
 <h1>Hi, Sky!</h1>
 <br>
 <form method="post">
-    <!-- Строка для обеспечения безопасности сайта, чтоб через него не фишили -->
+    <!-- Отправка POST-запроса с шаблона -->
     {%csrf_token %}
+    <!-- Токен для безопасной обработки запроса и блока фишинговых запросов -->
     <input type="text" name="name" /><br>
     <input type="email" name="email" /><br>
     <textarea name="message"></textarea><br>

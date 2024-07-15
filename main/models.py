@@ -10,6 +10,9 @@ class Student(models.Model):
     avatar = models.ImageField(upload_to='students/', verbose_name="аватар", **NULLABLE)
     """Для работы с изображениями в Джанго надо не забыть установить пакет Pillow"""
 
+    is_active = models.BooleanField(default=True, verbose_name='учится')
+    """Сразу после внесения изменений в модель создаем миграцию"""
+
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
 

@@ -127,6 +127,7 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = '/media'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 """В папку медиа кладется все, что можно создать по типу картинка, аватарка и т.д."""
+"""Пароль от superuser - 10203040, admin"""

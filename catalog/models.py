@@ -17,10 +17,6 @@ class Category(models.Model):
         verbose_name_plural = 'штуки'
         ordering = ['name', 'description']
 
-    @classmethod
-    def truncate_table_restart_id(cls):
-        pass
-
 
 class Product(models.Model):
     name = models.CharField(max_length=100, verbose_name='название')

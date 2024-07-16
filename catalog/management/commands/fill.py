@@ -25,11 +25,11 @@ class Command(BaseCommand):
         Product.objects.all().delete()
         Category.objects.all().delete()
 
-        # Создайте списки для хранения объектов
+        """Создание списков для хранения объектов"""
         product_for_create = []
         category_for_create = []
 
-        # Обходим все значения категорий из фикстуры для получения информации об одном объекте
+        """Обход всех значений категорий из фикстуры для получения информации об одном объекте"""
         for category in Command.json_read_categories():
             category_for_create.append(
                 Category(id=category['pk'],
@@ -37,10 +37,10 @@ class Command(BaseCommand):
                          description=category["fields"]["description"])
             )
 
-        # Создаем объекты в базе с помощью метода bulk_create()
+        """Создание объектов в базе"""
         Category.objects.bulk_create(category_for_create)
 
-        # Обходим все значения продуктов из фикстуры для получения информации об одном объекте
+        """Обход всех значений продуктов из фикстуры для получения информации об одном объекте"""
         for product in Command.json_read_products():
             product_for_create.append(
                 Product(id=product['pk'],
@@ -50,5 +50,5 @@ class Command(BaseCommand):
                         price=product["fields"]["price"])
             )
 
-        # Создаем объекты в базе с помощью метода bulk_create()
+        """Создание объектов в базе"""
         Product.objects.bulk_create(product_for_create)

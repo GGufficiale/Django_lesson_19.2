@@ -1,14 +1,14 @@
 from django.contrib import admin
-from catalog.models import Student
+from catalog.models import Product, Category
 
-# """Вывод студентов"""
-# admin.site.register(Student)
+# """Вывод продуктов"""
+# admin.site.register(Product)
 
 """Вывод списка студентов"""
 
 
-@admin.register(Student)
-class StudentAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'is_active',)
-    list_filter = ('is_active',)
-    search_fields = ('first_name', 'last_name',)
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description', 'price', 'photo', )
+    list_filter = ('name', 'description', 'price',)
+    search_fields = ('name', 'description', 'price',)

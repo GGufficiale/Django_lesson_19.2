@@ -77,7 +77,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgres_psycopg2',
         'NAME': 'homeworkdjangoorm',
         'USER': 'postgres',
-        'PASSWORD': '10203040',
+        'PASSWORD': '',
         'PORT': 5432
     }
 }

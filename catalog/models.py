@@ -7,6 +7,7 @@ NULLABLE = {'blank': True, 'null': True}  # форма, если парамет�
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name='название')
     description = models.CharField(max_length=1000, verbose_name='описание')
+
     # Сразу после внесения изменений в модель создаем миграцию"""
     def __str__(self):
         return f'{self.name}: {self.description}'
@@ -15,6 +16,10 @@ class Category(models.Model):
         verbose_name = 'штука'
         verbose_name_plural = 'штуки'
         ordering = ['name', 'description']
+
+    @classmethod
+    def truncate_table_restart_id(cls):
+        pass
 
 
 class Product(models.Model):

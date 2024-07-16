@@ -1,5 +1,5 @@
 from django.contrib import admin
-from main.models import Student
+from catalog.models import Student
 
 # """Вывод студентов"""
 # admin.site.register(Student)
